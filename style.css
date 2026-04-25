@@ -198,53 +198,10 @@ footer {
   from {opacity: 0; transform: translateY(20px);}
   to {opacity: 1; transform: translateY(0);}
 }
-.transform-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-  width: 100%;
-  max-width: 900px;
-  margin: auto;
-}
-
-/* TEXT SIDE */
-.card-text {
-  flex: 1.3;
-}
-
-/* IMAGE SIDE */
-.card-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-/* IMAGE CONTROL */
 .card-image img {
-  width: 100%;
-  max-width: 320px;   /* 🔥 controls size */
-  height: 220px;      /* 🔥 fixed height */
-  object-fit: cover;  /* keeps it neat */
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-
-/* HOVER */
-.card-image img:hover {
-  transform: scale(1.05);
-}
-
-/* MOBILE FIX */
-@media (max-width: 768px) {
-  .transform-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .card-image img {
-    max-width: 100%;
-    height: auto;
-  }
+  width: 260px !important;   /* 🔥 fixed width */
+  height: 180px !important;  /* 🔥 fixed height */
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
 }
