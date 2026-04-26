@@ -13,7 +13,7 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #f9f9f9;
+  background: #E0CFC2;
 }
 
 /* NAVBAR */
@@ -22,7 +22,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  background: #111;
+  background: #62191C;
   color: white;
 }
 
@@ -43,47 +43,70 @@ nav a {
 }
 
 nav a:hover {
-  color: #800000;
+  color: #CAAE9F;
 }
 
 /* HERO */
 .about-hero {
+  position: relative;
   text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-              url('images/about-bg.jpg'); /* CHANGE IMAGE */
-  background-size: cover;
-  background-position: center;
+  padding: 120px 20px;
+  background: url('images/about-bg.jpg') center/cover no-repeat;
   color: white;
 }
 
+.about-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(98, 25, 28, 0.75);
+}
+
+.about-hero h2,
+.about-hero p {
+  position: relative;
+  z-index: 2;
+}
+
 .subtitle {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 /* SECTIONS */
 .about-section {
   max-width: 900px;
   margin: 60px auto;
-  padding: 0 20px;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
   line-height: 1.8;
-  color: #222;
+  color: #333;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.about-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .about-section h3 {
   font-family: 'Playfair Display', serif;
   font-size: 26px;
   margin-bottom: 20px;
+  color: #62191C;
 }
 
-/* CATEGORY BLOCKS */
+/* CATEGORY */
 .category {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .category h4 {
-  color: #800000;
-  margin-bottom: 8px;
+  color: #873632;
+  margin-bottom: 5px;
 }
 
 /* LIST */
@@ -93,25 +116,32 @@ ul {
 
 /* THESIS BOX */
 .thesis {
-  background: #800000;
+  background: #62191C;
   color: white;
   padding: 40px;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 20px;
-  background: #111;
+  padding: 25px;
+  background: #62191C;
   color: white;
   margin-top: 60px;
 }
 
-/* HOVER EFFECT */
+/* HOVER */
 .about-section:hover {
-  transform: translateY(-3px);
-  transition: 0.3s;
+  transform: translateY(-5px);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 </style>
@@ -143,15 +173,11 @@ footer {
 <section class="about-section">
   <h3>Introduction</h3>
   <p>
-    Delhi is often understood through what endures—its monuments, ruins, and institutional architecture. 
-    Yet alongside this permanence exists another city: one that is constantly built, transformed, and dismantled. 
-    This project turns attention to that overlooked layer—temporary structures that shape urban experience 
-    in powerful but short-lived ways.
+    Delhi is often understood through what endures—its monuments, ruins, and institutional architecture. Yet alongside this permanence exists another city: one that is constantly built, transformed, and dismantled. This project turns attention to that overlooked layer—temporary structures that shape urban experience in powerful but short-lived ways.
   </p>
 
   <p>
-    Ephemeral Delhi documents these structures as cultural texts, interpreting them not as temporary utilities 
-    but as meaningful spatial expressions that reflect the city’s social, religious, and political life.
+    Ephemeral Delhi documents these structures as cultural texts, interpreting them not as temporary utilities but as meaningful spatial expressions that reflect the city’s social, religious, and political life.
   </p>
 </section>
 
@@ -159,14 +185,11 @@ footer {
 <section class="about-section">
   <h3>Core Idea</h3>
   <p>
-    Temporary architecture in Delhi consists of structures that appear rapidly, transform public space, 
-    and disappear shortly after. These include festival pandals, wedding tents, protest stages, 
-    and seasonal marketplaces.
+    Temporary architecture in Delhi consists of structures that appear rapidly, transform public space, and disappear shortly after. These include festival pandals, wedding tents, protest stages, and seasonal marketplaces.
   </p>
 
   <p>
-    Despite their short lifespan, these spaces are highly symbolic. They communicate identity, aspiration, 
-    devotion, and power, revealing that urban space is not fixed but continuously produced through cultural activity.
+    Despite their short lifespan, these spaces are highly symbolic. They communicate identity, aspiration, devotion, and power, revealing that urban space is not fixed but continuously produced through cultural activity.
   </p>
 </section>
 
@@ -210,8 +233,7 @@ footer {
 <section class="about-section">
   <h3>Theoretical Framework</h3>
   <p>
-    The project draws on ideas of spatial production, performance, and memory. 
-    It understands space as socially created and architecture as an event rather than a static object.
+    The project draws on ideas of spatial production, performance, and memory. It understands space as socially created and architecture as an event rather than a static object.
   </p>
 </section>
 
@@ -219,8 +241,7 @@ footer {
 <section class="about-section">
   <h3>Digital Humanities Approach</h3>
   <p>
-    Using mapping, photography, and metadata, the project builds a digital archive of structures 
-    that would otherwise leave no record.
+    Using mapping, photography, and metadata, the project builds a digital archive of structures that would otherwise leave no record.
   </p>
 </section>
 
@@ -228,8 +249,7 @@ footer {
 <section class="about-section">
   <h3>Why It Matters</h3>
   <p>
-    Most archives preserve what remains. This project focuses on what disappears. 
-    It expands the idea of heritage by showing how memory persists beyond physical form.
+    Most archives preserve what remains. This project focuses on what disappears. It expands the idea of heritage by showing how memory persists beyond physical form.
   </p>
 </section>
 
@@ -237,8 +257,7 @@ footer {
 <section class="about-section thesis">
   <h3>Thesis Statement</h3>
   <p>
-    Temporary architecture in Delhi functions as a performative cultural text that transforms public space, 
-    produces collective memory, and reflects shifting identities.
+    Temporary architecture in Delhi functions as a performative cultural text that transforms public space, produces collective memory, and reflects shifting identities.
   </p>
 </section>
 
@@ -246,6 +265,20 @@ footer {
 <footer>
   Ephemeral Delhi — Documenting what disappears
 </footer>
+
+<!-- SCROLL ANIMATION -->
+<script>
+const sections = document.querySelectorAll('.about-section');
+
+window.addEventListener('scroll', () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      sec.classList.add('visible');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
