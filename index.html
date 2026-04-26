@@ -31,7 +31,7 @@ nav {
   align-items: center;
   padding: 20px 8%;
   background: #62191C;
-  color: white;
+  color: #E0CFC2;
 }
 
 nav h1 {
@@ -60,6 +60,7 @@ nav a:hover {
   position: relative;
   height: 85vh;
   background: url("images/hero.jpg") center/cover no-repeat;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,7 +77,6 @@ nav a:hover {
   position: relative;
   color: white;
   text-align: center;
-  animation: fadeUp 1.5s ease;
 }
 
 .hero h2 {
@@ -94,7 +94,6 @@ nav a:hover {
   max-width: 900px;
   margin: 80px auto;
   padding: 0 20px;
-  animation: fadeUp 1.2s ease;
 }
 
 .content p {
@@ -115,7 +114,7 @@ nav a:hover {
 }
 
 .card {
-  background: #fff;
+  background: white;
   padding: 30px;
   border-radius: 12px;
   transition: 0.4s;
@@ -133,13 +132,27 @@ nav a:hover {
   color: #62191C;
 }
 
-/* QUOTE */
+/* QUOTE WITH IMAGE BACKGROUND */
 .quote {
-  background: #62191C;
+  position: relative;
+  background: url("images/quote-bg.jpg") center/cover no-repeat;
+  background-attachment: fixed;
   color: #E0CFC2;
   text-align: center;
-  padding: 70px 20px;
-  animation: fadeUp 1.5s ease;
+  padding: 80px 20px;
+}
+
+.quote::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(98,25,28,0.85);
+}
+
+.quote-text,
+.quote-author {
+  position: relative;
+  z-index: 2;
 }
 
 .quote-text {
@@ -186,16 +199,24 @@ footer {
   padding: 25px;
 }
 
-/* ANIMATIONS */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* SCROLL ANIMATIONS */
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: all 0.8s ease-out;
+}
+
+.fade-section.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* STAGGER EFFECT */
+.card:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.card:nth-child(3) {
+  transition-delay: 0.3s;
 }
 
 /* RESPONSIVE */
@@ -234,17 +255,17 @@ footer {
   </div>
 </header>
 
-<section class="content">
+<section class="content fade-section">
 <p>
-Delhi is not only a city of permanence—it is a city of moments. Beyond its monuments exists a parallel landscape that appears, transforms, and disappears.
+Delhi is not only a city of permanence—it is a city of moments. Beyond its monuments and enduring structures exists a parallel landscape that appears, transforms space, and disappears.
 </p>
 
 <p>
-Temporary architectures—pandals, tents, protest stages—reshape movement and gather communities, creating intense but short-lived spatial experiences.
+Across neighborhoods, temporary architectures emerge—festival pandals, wedding tents, protest stages, and seasonal markets. They reorganize movement, gather communities, and reimagine public space.
 </p>
 
 <p>
-These structures activate the city, turning ordinary spaces into sites of ritual and expression.
+These structures activate the city, turning ordinary spaces into sites of ritual, celebration, and expression.
 </p>
 
 <p class="highlight">
@@ -252,7 +273,7 @@ These structures do not merely occupy space—they perform it.
 </p>
 </section>
 
-<section class="cards">
+<section class="cards fade-section">
 
 <div class="card">
 <h3>Built to Transform</h3>
@@ -277,14 +298,14 @@ Built with impermanence in mind, these structures leave behind memory rather tha
 
 </section>
 
-<section class="quote">
+<section class="quote fade-section">
 <p class="quote-text">
-“The present contains nothing more than the past.”
+“The present contains nothing more than the past, and what is found in the effect was already in the cause.”
 </p>
 <p class="quote-author">— Henri Bergson</p>
 </section>
 
-<section class="cta">
+<section class="cta fade-section">
 <h3>Explore the Archive</h3>
 <a href="archive.html">Enter Archive →</a>
 </section>
@@ -292,6 +313,22 @@ Built with impermanence in mind, these structures leave behind memory rather tha
 <footer>
 Ephemeral Delhi — Documenting what disappears
 </footer>
+
+<script>
+const sections = document.querySelectorAll('.fade-section');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+</script>
 
 </body>
 </html>
