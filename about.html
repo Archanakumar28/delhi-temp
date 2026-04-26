@@ -1,10 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About | Ephemeral Delhi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f9;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #111;
+  color: white;
+}
+
+nav h1 {
+  font-family: 'Playfair Display', serif;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #800000;
+}
+
+/* HERO */
+.about-hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('images/about-bg.jpg'); /* CHANGE IMAGE */
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.subtitle {
+  opacity: 0.8;
+}
+
+/* SECTIONS */
+.about-section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  line-height: 1.8;
+  color: #222;
+}
+
+.about-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+/* CATEGORY BLOCKS */
+.category {
+  margin-bottom: 25px;
+}
+
+.category h4 {
+  color: #800000;
+  margin-bottom: 8px;
+}
+
+/* LIST */
+ul {
+  padding-left: 20px;
+}
+
+/* THESIS BOX */
+.thesis {
+  background: #800000;
+  color: white;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: white;
+  margin-top: 60px;
+}
+
+/* HOVER EFFECT */
+.about-section:hover {
+  transform: translateY(-3px);
+  transition: 0.3s;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <h1>Ephemeral Delhi</h1>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="archive.html">Archive</a></li>
+    <li><a href="map.html">Map</a></li>
+    <li><a href="analysis.html">Analysis</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
 <section class="about-hero">
   <h2>About the Project</h2>
   <p class="subtitle">
-    Ephemeral Delhi: A Digital Humanities Archive of Temporary Architecture
+    A Digital Humanities Archive of Temporary Architecture
   </p>
 </section>
 
+<!-- INTRO -->
 <section class="about-section">
   <h3>Introduction</h3>
   <p>
@@ -15,12 +150,12 @@
   </p>
 
   <p>
-    <b>Ephemeral Delhi</b> is a digital humanities project that documents and analyzes these structures as 
-    cultural texts. Rather than treating them as functional or decorative, the project interprets them as 
-    meaningful spatial expressions that reflect the city’s cultural, religious, social, and political life.
+    Ephemeral Delhi documents these structures as cultural texts, interpreting them not as temporary utilities 
+    but as meaningful spatial expressions that reflect the city’s social, religious, and political life.
   </p>
 </section>
 
+<!-- CORE IDEA -->
 <section class="about-section">
   <h3>Core Idea</h3>
   <p>
@@ -30,142 +165,87 @@
   </p>
 
   <p>
-    Despite their short lifespan, these spaces are highly symbolic and culturally dense. 
-    They embody collective identity, social aspiration, political presence, and ritual performance. 
-    The project argues that these structures should be read not as temporary utilities, 
-    but as active cultural expressions embedded in the life of the city.
+    Despite their short lifespan, these spaces are highly symbolic. They communicate identity, aspiration, 
+    devotion, and power, revealing that urban space is not fixed but continuously produced through cultural activity.
   </p>
 </section>
 
+<!-- QUESTIONS -->
 <section class="about-section">
   <h3>Research Questions</h3>
   <ul>
-    <li>How does temporary architecture reflect Delhi’s cultural, religious, and political life?</li>
-    <li>What meanings are embedded in design, material, and visual form?</li>
-    <li>How do these structures reshape public space and social interaction?</li>
-    <li>What happens to cultural memory once these structures disappear?</li>
+    <li>How does temporary architecture reflect cultural and political life?</li>
+    <li>What meanings are embedded in design and materials?</li>
+    <li>How do these structures reshape public space?</li>
+    <li>What remains after they disappear?</li>
   </ul>
 </section>
 
+<!-- TYPES -->
 <section class="about-section">
   <h3>What We Study</h3>
 
   <div class="category">
     <h4>Religious Structures</h4>
-    <p>
-      Festival pandals, mandaps, and ritual installations that merge devotion with spectacle. 
-      These spaces often incorporate mythological narratives, contemporary themes, 
-      and elaborate visual design.
-    </p>
+    <p>Festival spaces that merge devotion with spectacle and storytelling.</p>
   </div>
 
   <div class="category">
-    <h4>Social & Family Spaces</h4>
-    <p>
-      Wedding tents, community feasts, and ceremonial spaces that express identity, class, 
-      and aspiration through decoration, lighting, and scale.
-    </p>
+    <h4>Social Spaces</h4>
+    <p>Wedding and community structures that express identity and aspiration.</p>
   </div>
 
   <div class="category">
-    <h4>Political & Protest Architecture</h4>
-    <p>
-      Temporary stages, barricades, and protest sites that transform public space into arenas 
-      of visibility, resistance, and power.
-    </p>
+    <h4>Political Structures</h4>
+    <p>Protest and rally spaces that shape visibility and power.</p>
   </div>
 
   <div class="category">
-    <h4>Commercial Pop-Up Spaces</h4>
-    <p>
-      Seasonal markets and temporary stalls that reflect patterns of consumption, 
-      mobility, and informal economies within the city.
-    </p>
+    <h4>Commercial Spaces</h4>
+    <p>Markets and stalls reflecting urban rhythms and informal economies.</p>
   </div>
-
 </section>
 
+<!-- THEORY -->
 <section class="about-section">
   <h3>Theoretical Framework</h3>
   <p>
-    This project is grounded in key ideas from urban and cultural theory. It draws on the concept 
-    of the <b>production of space</b>, which understands space as something socially created rather 
-    than fixed. It also engages with <b>performance theory</b>, viewing architecture as an event 
-    that unfolds over time, and <b>memory studies</b>, which examine how experiences persist 
-    beyond physical form.
-  </p>
-
-  <p>
-    Together, these perspectives allow the project to interpret temporary architecture 
-    as a dynamic cultural process rather than static structure.
+    The project draws on ideas of spatial production, performance, and memory. 
+    It understands space as socially created and architecture as an event rather than a static object.
   </p>
 </section>
 
+<!-- DH -->
 <section class="about-section">
   <h3>Digital Humanities Approach</h3>
   <p>
-    Because these structures are ephemeral, digital tools become essential for preservation. 
-    The project uses mapping, visual documentation, and metadata organization to create 
-    an interactive archive of spaces that would otherwise leave no record.
-  </p>
-
-  <ul>
-    <li>Interactive spatial mapping of sites</li>
-    <li>Photographic documentation across time</li>
-    <li>Metadata tagging (occasion, material, duration, context)</li>
-    <li>Visual and textual analysis</li>
-  </ul>
-
-  <p>
-    This approach transforms fleeting experiences into structured, accessible knowledge.
+    Using mapping, photography, and metadata, the project builds a digital archive of structures 
+    that would otherwise leave no record.
   </p>
 </section>
 
-<section class="about-section">
-  <h3>Methodology</h3>
-  <p>
-    The project follows a phased methodology combining fieldwork and digital analysis. 
-    Selected sites across Delhi are documented through photography and observation. 
-    Data is organized into a structured format and visualized through an interactive map. 
-    This is followed by cultural analysis that connects field observations with theoretical frameworks.
-  </p>
-
-  <p>
-    The method remains flexible, allowing the project to expand across time, space, and themes.
-  </p>
-</section>
-
+<!-- WHY -->
 <section class="about-section">
   <h3>Why It Matters</h3>
   <p>
-    Most archives preserve what remains. This project focuses on what disappears.
-  </p>
-
-  <p>
-    Temporary architecture reveals that urban space is not fixed—it is continuously produced 
-    through ritual, celebration, and political action. By documenting these transformations, 
-    the project expands the idea of heritage beyond permanence and highlights the role of 
-    impermanence in shaping cultural memory.
+    Most archives preserve what remains. This project focuses on what disappears. 
+    It expands the idea of heritage by showing how memory persists beyond physical form.
   </p>
 </section>
 
-<section class="about-section">
-  <h3>Project Vision</h3>
-  <p>
-    Ephemeral Delhi is designed as an evolving archive. It can expand across years, locations, 
-    and categories, allowing for longitudinal and comparative study.
-  </p>
-
-  <p>
-    Future directions include year-wise comparisons, design evolution, cross-city studies, 
-    and enhanced digital visualization.
-  </p>
-</section>
-
+<!-- THESIS -->
 <section class="about-section thesis">
   <h3>Thesis Statement</h3>
   <p>
-    Temporary architecture in Delhi functions as a performative cultural text that transforms 
-    public space, produces collective memory, and reflects shifting social and political identities.
+    Temporary architecture in Delhi functions as a performative cultural text that transforms public space, 
+    produces collective memory, and reflects shifting identities.
   </p>
 </section>
+
+<!-- FOOTER -->
+<footer>
+  Ephemeral Delhi — Documenting what disappears
+</footer>
+
+</body>
+</html>
