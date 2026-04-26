@@ -48,8 +48,8 @@ nav a:hover {
   color: #CAAE9F;
 }
 
-/* HERO */
-.map-hero{
+/* ✅ FIXED HERO (now matches homepage exactly) */
+.map-hero {
   position: relative;
   height: 85vh;
   background: url("images/map bg.jpeg") center/cover no-repeat;
@@ -58,17 +58,34 @@ nav a:hover {
   align-items: center;
   justify-content: center;
 }
-.map-hero::after {
-  content: "";
+
+.map-hero .hero-overlay {
   position: absolute;
-  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(36,12,14,0.75);
 }
 
-.map-hero h3,
-.map-hero p {
-  color:#FFFFFF;
+.map-hero .hero-content {
   position: relative;
-  z-index: 2;
+  color: white;
+  text-align: center;
+  background: url("images/map bg.jpeg") center/cover no-repeat;
+  padding: 40px 60px;
+  border-radius: 10px;
+  max-width: 700px;
+}
+
+.map-hero .hero-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+}
+
+.map-hero .hero-content p {
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: 300;
+  opacity: 0.95;
 }
 
 /* CONTENT CARD */
@@ -154,10 +171,16 @@ footer {
   </ul>
 </nav>
 
-<!-- HERO -->
+<!-- HERO (FIXED STRUCTURE) -->
 <section class="map-hero">
-  <h3>Mapping the Ephemeral City: </h3>
-  <p class="subtitle">Explore how temporary structures reshape Delhi’s urban space</p>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h2>Mapping the Ephemeral City</h2>
+    <p>Explore how temporary structures reshape Delhi’s urban space</p>
+  </div>
+
 </section>
 
 <!-- FILTER PANEL -->
