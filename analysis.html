@@ -9,12 +9,12 @@
 
 <style>
 
-/* RESET */
+/* BASE */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: #E0CFC2;
-  color: #2a2a2a;
+  color: #62191C;
 }
 
 /* NAVBAR */
@@ -24,7 +24,7 @@ nav {
   align-items: center;
   padding: 20px 50px;
   background: #62191C;
-  color: white;
+  color: #E0CFC2;
 }
 
 nav h1 {
@@ -38,7 +38,7 @@ nav ul {
 }
 
 nav a {
-  color: white;
+  color: #E0CFC2;
   text-decoration: none;
   transition: 0.3s;
 }
@@ -50,23 +50,26 @@ nav a:hover {
 /* HERO */
 .analysis-hero {
   height: 60vh;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-              url('images/analysis-bg.jpg'); /* CHANGE IMAGE */
+  background: linear-gradient(
+    rgba(98, 25, 28, 0.75),
+    rgba(98, 25, 28, 0.75)
+  ),
+  url('images/analysis-bg.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: #E0CFC2;
 }
 
 .analysis-hero h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 42px;
+  font-size: 44px;
 }
 
-/* SECTIONS */
+/* SECTION */
 .section {
   max-width: 1000px;
   margin: 60px auto;
@@ -74,10 +77,10 @@ nav a:hover {
   line-height: 1.8;
   opacity: 0;
   transform: translateY(40px);
-  transition: 0.8s;
+  transition: 0.8s ease;
 }
 
-.section.show {
+.section.active {
   opacity: 1;
   transform: translateY(0);
 }
@@ -86,7 +89,7 @@ nav a:hover {
   font-family: 'Playfair Display', serif;
   font-size: 28px;
   margin-bottom: 20px;
-  color: #62191C;
+  color: #873632;
 }
 
 /* HIGHLIGHT BOX */
@@ -95,17 +98,15 @@ nav a:hover {
   padding: 25px;
   border-left: 5px solid #62191C;
   margin-top: 20px;
+  color: #62191C;
 }
 
-/* DATA LINK SECTION */
+/* DATA LINK */
 .data-link {
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(
-    rgba(98, 25, 28, 0.95),
-    rgba(135, 54, 50, 0.95)
-  );
-  color: white;
+  background: #873632;
+  color: #E0CFC2;
 }
 
 .data-link h3 {
@@ -116,12 +117,13 @@ nav a:hover {
 .data-link p {
   max-width: 600px;
   margin: 15px auto 25px;
+  color: #E0CFC2;
 }
 
 .data-btn {
   display: inline-block;
   padding: 12px 30px;
-  background: white;
+  background: #E0CFC2;
   color: #62191C;
   text-decoration: none;
   border-radius: 30px;
@@ -139,7 +141,7 @@ footer {
   text-align: center;
   padding: 20px;
   background: #62191C;
-  color: white;
+  color: #E0CFC2;
 }
 
 /* SCROLL ANIMATION */
@@ -151,7 +153,6 @@ footer {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
-  transition: 0.8s ease;
 }
 
 </style>
@@ -180,7 +181,7 @@ footer {
 <section class="section reveal">
   <h3>Understanding Temporary Architecture</h3>
   <p>
-    Temporary architecture in Delhi operates as a dynamic cultural system rather than a static built form. 
+    Temporary architecture in Delhi operates as a dynamic cultural system rather than a fixed built form. 
     These structures emerge in response to specific events, transforming space through design, scale, and collective participation. 
     Their significance lies not in permanence, but in their ability to reshape urban experience within a limited time frame.
   </p>
@@ -189,37 +190,36 @@ footer {
 <section class="section reveal">
   <h3>Production of Space</h3>
   <p>
-    Drawing from spatial theory, these structures demonstrate that urban space is continuously produced rather than fixed. 
-    A street becomes a ritual path, an open ground becomes a sacred enclosure, and a public site transforms into a space of resistance.
+    These structures demonstrate that space is continuously produced through social and cultural activity. 
+    Streets become ritual pathways, open grounds transform into sacred environments, and public sites evolve into spaces of resistance.
   </p>
 
   <div class="highlight-box">
-    Space in Delhi is not stable — it is repeatedly constructed through cultural practice.
+    Urban space in Delhi is not static—it is repeatedly constructed through cultural practice.
   </div>
 </section>
 
 <section class="section reveal">
   <h3>Performance and Temporality</h3>
   <p>
-    These environments function as performative spaces where meaning is enacted through movement, gathering, and visual expression. 
-    Their temporality intensifies their impact, creating moments of heightened experience that dissolve once the structure is removed.
+    Temporary structures function as performative environments where meaning is created through participation, movement, and visual design. 
+    Their short lifespan intensifies their cultural impact, producing moments of heightened spatial experience.
   </p>
 </section>
 
 <section class="section reveal">
   <h3>Memory and Disappearance</h3>
   <p>
-    Despite their disappearance, these structures persist in memory. They leave behind traces in photographs, spatial recollections, 
-    and collective experience, challenging the idea that cultural significance depends on permanence.
+    Even after they are dismantled, these structures persist in memory. 
+    They leave behind traces in visual documentation and collective experience, suggesting that cultural meaning can exist beyond physical permanence.
   </p>
 </section>
 
-<!-- DATA ANALYSIS LINK -->
+<!-- DATA LINK -->
 <section class="data-link">
   <h3>Explore the Data</h3>
   <p>
-    Engage with interactive visualizations that map patterns across temporary structures—categories, materials, 
-    spatial distribution, and cultural themes.
+    View interactive visualizations mapping patterns across temporary structures, including categories, materials, and spatial distribution.
   </p>
 
   <a href="data-analysis.html" class="data-btn">
@@ -234,14 +234,14 @@ footer {
 
 <!-- SCROLL SCRIPT -->
 <script>
-const reveals = document.querySelectorAll(".reveal");
+const elements = document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll", () => {
-  reveals.forEach(el => {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
+  elements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    const height = window.innerHeight;
 
-    if (elementTop < windowHeight - 100) {
+    if (top < height - 100) {
       el.classList.add("active");
     }
   });
