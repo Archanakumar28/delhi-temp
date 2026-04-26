@@ -1,16 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ephemeral Delhi</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Ephemeral Delhi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #faf9f7;
+  color: #2c2c2c;
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+nav h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: maroon;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 80vh;
+  background: url("images/hero.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+  position: relative;
+  color: white;
+  z-index: 2;
+}
+
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+/* CONTENT */
+.content {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.content p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.highlight {
+  font-weight: bold;
+  font-size: 18px;
+  color: maroon;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 60px 8%;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+}
+
+/* QUOTE */
+.quote {
+  background: maroon;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.quote-text {
+  font-size: 22px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.quote-author {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.cta h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  margin-bottom: 20px;
+}
+
+.cta a {
+  display: inline-block;
+  padding: 12px 25px;
+  background: maroon;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.cta a:hover {
+  background: #5a0000;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #111;
+  color: white;
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
   <h1>Ephemeral Delhi</h1>
   <ul>
@@ -33,68 +231,67 @@
 
 <!-- INTRO -->
 <section class="content">
- <p>
-Delhi is not only a city of permanence—it is a city of moments. Beyond its monuments and enduring structures exists a parallel landscape that appears, transforms space, and disappears. This transient layer of the city is constantly in motion, shaping how space is experienced in time rather than preserved in form.
+<p>
+Delhi is not only a city of permanence—it is a city of moments. Beyond its monuments and enduring structures exists a parallel landscape that appears, transforms space, and disappears.
 </p>
 
 <p>
-Across neighborhoods, temporary architectures emerge—festival pandals, wedding tents, protest stages, and seasonal markets. They reorganize movement, gather communities, and reimagine public space, creating intense but short-lived spatial experiences that leave behind traces in memory rather than material.
+Across neighborhoods, temporary architectures emerge—festival pandals, wedding tents, protest stages, and seasonal markets. They reorganize movement and reimagine public space.
 </p>
 
 <p>
-These structures do not simply exist within the city—they activate it. They transform ordinary spaces into sites of ritual, celebration, and expression, revealing that urban space is not fixed, but continuously produced through cultural practice.
+These structures activate the city, turning ordinary spaces into sites of ritual, celebration, and expression.
 </p>
 
-  <p class="highlight">
-    These structures do not merely occupy space—they perform it.
-  </p>
+<p class="highlight">
+These structures do not merely occupy space—they perform it.
+</p>
 </section>
 
-<!-- FEATURE CARDS -->
+<!-- CARDS -->
 <section class="cards">
 
-<div class="card" >
-
-  <!-- TEXT -->
-  
-   <h3>Built to Transform</h3>
+<div class="card">
+<h3>Built to Transform</h3>
 <p>
-Temporary architecture in Delhi does not simply occupy space—it transforms it. An empty ground becomes a site of ritual, a street turns into a procession route, and a public intersection evolves into a space of gathering and spectacle. These structures interrupt the everyday rhythm of the city, reconfiguring movement, visibility, and interaction. In doing so, they reveal that urban space is not fixed, but constantly produced through cultural activity and collective presence. What was once ordinary acquires new meaning, as space is reshaped through use, experience, and collective participation, even if only for a brief moment.
+Temporary architecture reshapes urban space by turning everyday locations into sites of gathering, ritual, and spectacle. It reveals that space is continuously produced through use and collective presence.
 </p>
-  </div>
+</div>
 
-  <div class="card">
-    <h3>Designed to Communicate</h3>
-    <p>
-      Temporary architecture in Delhi is never neutral—it communicates. Through color, scale, material, and form, these structures convey meanings that are immediately legible within their cultural contexts. A religious pandal may draw on mythological imagery to evoke devotion and shared belief, a wedding tent may signal aspiration and social identity through its opulence and illumination, while a protest stage asserts urgency and visibility through its placement and design. Every element is intentional: fabric, lighting, ornamentation, and spatial arrangement together function as a visual language. In this way, temporary architecture becomes a medium of communication, transforming built space into a site where cultural narratives, identities, and emotions are actively expressed and interpreted.
-    </p>
-  </div>
+<div class="card">
+<h3>Designed to Communicate</h3>
+<p>
+Through color, material, and form, these structures express identity, belief, and power. They function as visual languages embedded in cultural contexts.
+</p>
+</div>
 
-  <div class="card">
-    <h3>Meant to Disappear</h3>
-    <p>
-      Temporary architecture is defined as much by its disappearance as by its presence. Built with the knowledge that it will be dismantled, it exists within a limited yet intense temporal frame, marking specific moments of ritual, celebration, or political expression. Its removal is not merely practical but meaningful, signaling the closure of an event and the transition of space back to its everyday state. Yet even after these structures vanish, they leave behind traces—memories, altered spatial experiences, and visual records. This ephemerality challenges conventional ideas of heritage and permanence, suggesting that cultural significance does not depend on durability but can reside in fleeting, repeated, and collectively experienced moments that continue to shape how the city is remembered.
-    </p>
-  </div>
+<div class="card">
+<h3>Meant to Disappear</h3>
+<p>
+Built with impermanence in mind, these structures leave behind memory rather than material, challenging traditional ideas of heritage and permanence.
+</p>
+</div>
 
 </section>
 
+<!-- QUOTE -->
 <section class="quote">
-  <p class="quote-text">
-    “The present contains nothing more than the past, and what is found in the effect was already in the cause.”
-  </p>
-  <p class="quote-author">— Henri Bergson</p>
+<p class="quote-text">
+“The present contains nothing more than the past, and what is found in the effect was already in the cause.”
+</p>
+<p class="quote-author">— Henri Bergson</p>
 </section>
 
 <!-- CTA -->
 <section class="cta">
-  <h3>Explore the Archive</h3>
-  <p>Trace the structures that shape the city—and then vanish.</p>
-  <a href="archive.html">Enter Archive →</a>
+<h3>Explore the Archive</h3>
+<p>Trace the structures that shape the city—and then vanish.</p>
+<a href="archive.html">Enter Archive →</a>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  Ephemeral Delhi — Documenting what disappears
+Ephemeral Delhi — Documenting what disappears
 </footer>
 
 </body>
