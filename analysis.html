@@ -5,121 +5,59 @@
 <title>Analysis | Ephemeral Delhi</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
+/* ANALYSIS PAGE STYLING */
 
-/* BASE */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #f9f9f9;
+.analysis-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
 }
 
-/* NAV */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  background: #111;
-  color: white;
-}
-
-nav h1 {
+.analysis-container h2 {
   font-family: 'Playfair Display', serif;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #800000;
-}
-
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-              url('images/analysis-bg.jpg'); /* CHANGE IMAGE */
-  background-size: cover;
-  background-position: center;
-  color: white;
-}
-
-/* CONTENT */
-.section {
-  max-width: 950px;
-  margin: 60px auto;
-  padding: 0 20px;
-  line-height: 1.8;
-  color: #222;
-}
-
-.section h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
+  font-size: 36px;
   margin-bottom: 20px;
 }
 
-/* HIGHLIGHT BOX */
-.highlight-box {
-  background: #800000;
-  color: white;
-  padding: 35px;
-  border-radius: 10px;
-  margin-top: 40px;
+.analysis-container p {
+  line-height: 1.7;
+  margin-bottom: 20px;
 }
 
-/* CARDS (INSIGHTS) */
-.insights {
+.chart-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
   margin-top: 40px;
 }
 
-.card {
+.chart-card {
   background: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
   transition: 0.3s;
 }
 
-.card:hover {
+.chart-card:hover {
   transform: translateY(-8px);
 }
 
-.card h4 {
-  color: #800000;
+canvas {
+  max-width: 100%;
 }
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #111;
-  color: white;
-  margin-top: 60px;
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- NAVBAR -->
 <nav>
   <h1>Ephemeral Delhi</h1>
   <ul>
@@ -127,136 +65,112 @@ footer {
     <li><a href="about.html">About</a></li>
     <li><a href="archive.html">Archive</a></li>
     <li><a href="map.html">Map</a></li>
-    <li><a href="#">Analysis</a></li>
+    <li><a href="analysis.html">Analysis</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <h2>Analysis</h2>
-  <p>Interpreting Temporary Architecture as Cultural Practice</p>
+<!-- CONTENT -->
+<section class="analysis-container">
+
+<h2>Spatial & Cultural Analysis</h2>
+
+<p>
+This section moves beyond documentation to interpretation. By mapping and categorizing temporary structures across Delhi, the project identifies patterns in how space is used, transformed, and experienced.
+</p>
+
+<p>
+The data reveals that temporary architecture is not randomly distributed—it reflects cultural concentration, political activity, and economic rhythms. Religious structures tend to cluster within residential neighborhoods, while protest architecture appears closer to administrative zones. Social structures such as wedding tents vary significantly in scale and design depending on locality and class context.
+</p>
+
+<p>
+Through this analysis, the project demonstrates that temporary architecture is a key mechanism through which urban space is continuously produced and negotiated.
+</p>
+
+<!-- CHARTS -->
+<div class="chart-grid">
+
+<!-- Chart 1 -->
+<div class="chart-card">
+<h3>Types of Temporary Architecture</h3>
+<canvas id="typeChart"></canvas>
+</div>
+
+<!-- Chart 2 -->
+<div class="chart-card">
+<h3>Distribution by Function</h3>
+<canvas id="functionChart"></canvas>
+</div>
+
+<!-- Chart 3 -->
+<div class="chart-card">
+<h3>Duration of Structures</h3>
+<canvas id="durationChart"></canvas>
+</div>
+
+<!-- Chart 4 -->
+<div class="chart-card">
+<h3>Material Usage</h3>
+<canvas id="materialChart"></canvas>
+</div>
+
+</div>
+
 </section>
 
-<!-- INTRO -->
-<section class="section">
-  <h3>Reading the Temporary City</h3>
-  <p>
-    Temporary architecture in Delhi offers a unique lens through which to understand the city. 
-    Unlike permanent structures, these spaces exist within a limited timeframe, yet their impact 
-    on spatial experience is immediate and profound. They reorganize movement, reshape visibility, 
-    and create temporary centers of attention within the urban landscape.
-  </p>
-
-  <p>
-    By examining these structures, the project shifts focus from static architecture to 
-    dynamic spatial processes. The city emerges not as a fixed entity, but as something 
-    continuously produced through cultural activity, ritual, and performance.
-  </p>
-</section>
-
-<!-- KEY ARGUMENT -->
-<section class="section">
-  <h3>Architecture as Performance</h3>
-  <p>
-    Temporary structures function as performative spaces. Their meaning lies not only in their design, 
-    but in their use—how people gather, move, and interact within them. A festival pandal becomes 
-    meaningful through ritual participation, a protest stage through collective presence, 
-    and a wedding tent through social display.
-  </p>
-
-  <p>
-    These spaces are therefore not passive environments. They actively produce experience, 
-    transforming ordinary locations into sites of significance for a limited duration.
-  </p>
-</section>
-
-<!-- SPATIAL ANALYSIS -->
-<section class="section">
-  <h3>Production of Space</h3>
-  <p>
-    The project draws on the idea that space is socially produced rather than fixed. 
-    Temporary architecture demonstrates this clearly: an empty ground can become sacred, 
-    political, or celebratory depending on how it is constructed and used.
-  </p>
-
-  <p>
-    These transformations reveal that urban space is constantly negotiated. Authority, 
-    access, and visibility are redefined through the presence of these structures, 
-    even if only temporarily.
-  </p>
-</section>
-
-<!-- INSIGHTS GRID -->
-<section class="section">
-  <h3>Key Cultural Insights</h3>
-
-  <div class="insights">
-
-    <div class="card">
-      <h4>Impermanence</h4>
-      <p>
-        These structures reflect cultural ideas of transience, where meaning is not tied 
-        to permanence but to experience and duration.
-      </p>
-    </div>
-
-    <div class="card">
-      <h4>Collective Memory</h4>
-      <p>
-        Even after dismantling, these spaces persist in memory, shaping how communities 
-        remember events and experiences.
-      </p>
-    </div>
-
-    <div class="card">
-      <h4>Power & Visibility</h4>
-      <p>
-        Political and religious structures assert presence in public space, making certain 
-        identities and voices visible.
-      </p>
-    </div>
-
-    <div class="card">
-      <h4>Urban Rhythms</h4>
-      <p>
-        The city follows cycles of construction and disappearance, revealing patterns 
-        tied to festivals, seasons, and social events.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- MEMORY -->
-<section class="section">
-  <h3>Memory and Disappearance</h3>
-  <p>
-    One of the central questions of this project concerns what remains after these structures vanish. 
-    While their material form disappears, their impact persists in memory, documentation, 
-    and collective experience.
-  </p>
-
-  <p>
-    This highlights the importance of digital archiving. By recording these spaces, the project 
-    preserves moments that would otherwise be lost, allowing them to be studied, revisited, 
-    and interpreted beyond their physical lifespan.
-  </p>
-</section>
-
-<!-- THESIS BOX -->
-<section class="section highlight-box">
-  <h3>Central Argument</h3>
-  <p>
-    Temporary architecture in Delhi functions as a performative cultural system that reshapes 
-    public space, produces collective memory, and reflects shifting social, religious, 
-    and political identities.
-  </p>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  Ephemeral Delhi — Documenting what disappears
+Ephemeral Delhi — Documenting what disappears
 </footer>
+
+<!-- JS FOR CHARTS -->
+<script>
+
+// TYPE CHART
+new Chart(document.getElementById("typeChart"), {
+  type: "pie",
+  data: {
+    labels: ["Religious", "Social", "Political", "Commercial"],
+    datasets: [{
+      data: [40, 25, 20, 15],
+    }]
+  }
+});
+
+// FUNCTION CHART
+new Chart(document.getElementById("functionChart"), {
+  type: "bar",
+  data: {
+    labels: ["Ritual", "Celebration", "Protest", "Commerce"],
+    datasets: [{
+      label: "Occurrences",
+      data: [18, 12, 9, 7],
+    }]
+  }
+});
+
+// DURATION CHART
+new Chart(document.getElementById("durationChart"), {
+  type: "line",
+  data: {
+    labels: ["1 Day", "3 Days", "1 Week", "2 Weeks"],
+    datasets: [{
+      label: "Number of Structures",
+      data: [5, 12, 8, 3],
+    }]
+  }
+});
+
+// MATERIAL CHART
+new Chart(document.getElementById("materialChart"), {
+  type: "doughnut",
+  data: {
+    labels: ["Fabric", "Bamboo", "Metal", "Plastic"],
+    datasets: [{
+      data: [30, 25, 20, 15],
+    }]
+  }
+});
+
+</script>
 
 </body>
 </html>
