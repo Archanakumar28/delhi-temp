@@ -49,29 +49,44 @@ nav a:hover {
 }
 
 /* HERO */
-.map-hero{
+/* MAP HERO TEXT FIX */
+.map-hero {
   position: relative;
-  height: 85vh;
-  background: url("images/map bg.jpeg") center/cover no-repeat;
-  background-attachment: fixed;
+  height: 60vh;
+  background: url("images/map-hero.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
-.map-hero::after {
+
+.map-hero::before {
   content: "";
   position: absolute;
   inset: 0;
+  background: rgba(36,12,14,0.7);
 }
 
-.map-hero h2,
-.map-hero p {
-  color:#FFFFFF;
-  font-family: 'Playfair Display', serif;
+.map-hero-content {
   position: relative;
-  z-index: 2;
+  color: #E0CFC2;
+  max-width: 700px;
+  padding: 20px;
 }
 
+/* 🔥 THIS FIXES YOUR ISSUE */
+.map-hero-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.map-hero-content p {
+  font-size: 18px;
+  font-weight: 300;
+  opacity: 0.9;
+}
 /* CONTENT CARD */
 .content {
   max-width: 900px;
