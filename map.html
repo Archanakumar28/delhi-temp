@@ -1,24 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Map</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+<meta charset="UTF-8">
+<title>Map | Ephemeral Delhi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
+
+<style>
+
+/* BASE */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #E0CFC2;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #62191C;
+  color: white;
+}
+
+nav h1 {
+  font-family: 'Playfair Display', serif;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #CAAE9F;
+}
+
+/* HERO */
+.map-hero {
+  position: relative;
+  text-align: center;
+  padding: 100px 20px;
+  background: url('images/map-bg.jpg') center/cover no-repeat;
+  color: white;
+}
+
+.map-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(98, 25, 28, 0.75);
+}
+
+.map-hero h2,
+.map-hero p {
+  position: relative;
+  z-index: 2;
+}
+
+/* CONTENT CARD */
+.content {
+  max-width: 900px;
+  margin: 50px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s;
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* FILTER BUTTONS */
+.filters {
+  margin-top: 20px;
+}
+
+.filters button {
+  padding: 10px 18px;
+  margin: 8px;
+  border: none;
+  border-radius: 20px;
+  background: #873632;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filters button:hover {
+  background: #62191C;
+  transform: scale(1.05);
+}
+
+/* MAP */
+#map {
+  height: 500px;
+  width: 90%;
+  margin: 40px auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #62191C;
+  color: white;
+  margin-top: 40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
   <h1>Ephemeral Delhi</h1>
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="archive.html">Archive</a></li>
-    <li><a href="map.html">Map</a></li>
+    <li><a href="#">Map</a></li>
     <li><a href="analysis.html">Analysis</a></li>
   </ul>
 </nav>
 
+<!-- HERO -->
+<section class="map-hero">
+  <h2>Mapping the Ephemeral City</h2>
+  <p>Explore how temporary structures reshape Delhi’s urban space</p>
+</section>
+
+<!-- FILTER PANEL -->
 <section class="content">
   <h2>Explore the City</h2>
   <p>Select a category to filter temporary structures:</p>
@@ -32,10 +173,29 @@
   </div>
 </section>
 
+<!-- MAP -->
 <div id="map"></div>
 
+<!-- FOOTER -->
+<footer>
+  Ephemeral Delhi — Documenting what disappears
+</footer>
+
+<!-- LEAFLET -->
 <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
 <script src="map.js"></script>
+
+<!-- SCROLL ANIMATION -->
+<script>
+const content = document.querySelector('.content');
+
+window.addEventListener('scroll', () => {
+  const top = content.getBoundingClientRect().top;
+  if (top < window.innerHeight - 100) {
+    content.classList.add('visible');
+  }
+});
+</script>
 
 </body>
 </html>
