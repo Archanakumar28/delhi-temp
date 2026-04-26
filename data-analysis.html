@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Data Analysis | Ephemeral Delhi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<!-- CHART JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fafafa;
+  color: #222;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+nav h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: maroon;
+}
+
+/* MAIN */
+.analysis-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+.analysis-container h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.analysis-container p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+/* CHART GRID */
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.chart-card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.chart-card:hover {
+  transform: translateY(-8px);
+}
+
+.chart-card h3 {
+  margin-bottom: 20px;
+}
+
+/* BUTTON BACK */
+.back-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 24px;
+  background-color: maroon;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #5a0000;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  background: #111;
+  color: white;
+  font-size: 14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <h1>Ephemeral Delhi</h1>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="archive.html">Archive</a></li>
+    <li><a href="map.html">Map</a></li>
+    <li><a href="analysis.html">Analysis</a></li>
+  </ul>
+</nav>
+
+<!-- CONTENT -->
+<section class="analysis-container">
+
+<h2>Quantitative & Spatial Data Analysis</h2>
+
+<p>
+This section extends the project into a data-driven interpretation of temporary architecture in Delhi. While individual entries in the archive capture specific moments, this page aggregates those observations to identify broader cultural and spatial patterns.
+</p>
+
+<p>
+The visualisations presented here highlight how different forms of temporary architecture are distributed across function, duration, and material use. Rather than treating these structures as isolated events, the analysis reveals recurring tendencies that reflect the rhythms of ritual, celebration, political expression, and economic activity within the city.
+</p>
+
+<p>
+The purpose of this section is not statistical precision, but interpretative clarity—demonstrating how digital tools can make visible patterns that are otherwise difficult to perceive in fragmented, short-lived urban phenomena.
+</p>
+
+<!-- CHARTS -->
+<div class="chart-grid">
+
+<div class="chart-card">
+<h3>Types of Temporary Architecture</h3>
+<canvas id="typeChart"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Function Distribution</h3>
+<canvas id="functionChart"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Duration Patterns</h3>
+<canvas id="durationChart"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Material Usage</h3>
+<canvas id="materialChart"></canvas>
+</div>
+
+</div>
+
+<a href="analysis.html" class="back-btn">← Back to Analysis</a>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+Ephemeral Delhi — Documenting what disappears
+</footer>
+
+<!-- CHART JS -->
+<script>
+
+// TYPE CHART
+new Chart(document.getElementById("typeChart"), {
+  type: "pie",
+  data: {
+    labels: ["Religious", "Social", "Political", "Commercial"],
+    datasets: [{
+      data: [40, 25, 20, 15],
+    }]
+  }
+});
+
+// FUNCTION CHART
+new Chart(document.getElementById("functionChart"), {
+  type: "bar",
+  data: {
+    labels: ["Ritual", "Celebration", "Protest", "Commerce"],
+    datasets: [{
+      data: [18, 12, 9, 7],
+    }]
+  }
+});
+
+// DURATION CHART
+new Chart(document.getElementById("durationChart"), {
+  type: "line",
+  data: {
+    labels: ["1 Day", "3 Days", "1 Week", "2 Weeks"],
+    datasets: [{
+      data: [5, 12, 8, 3],
+    }]
+  }
+});
+
+// MATERIAL CHART
+new Chart(document.getElementById("materialChart"), {
+  type: "doughnut",
+  data: {
+    labels: ["Fabric", "Bamboo", "Metal", "Plastic"],
+    datasets: [{
+      data: [30, 25, 20, 15],
+    }]
+  }
+});
+
+</script>
+
+</body>
+</html>
