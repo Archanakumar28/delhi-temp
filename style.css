@@ -230,3 +230,43 @@ section.quote {
   color: #fff;
 }
 }
+.about-hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: #111;
+  color: white;
+}
+
+.subtitle {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.about-section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  line-height: 1.8;
+}
+
+.about-section h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.category {
+  margin-bottom: 25px;
+}
+
+.category h4 {
+  margin-bottom: 8px;
+  color: #800000;
+}
+
+.thesis {
+  background: #800000;
+  color: white;
+  padding: 40px;
+  border-radius: 10px;
+}
