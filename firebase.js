@@ -44,3 +44,16 @@ export async function submitArchiveForm(name, location, type, desc, file) {
     timestamp: new Date()
   });
 }
+// FETCH ARCHIVE DATA
+import { getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+export async function fetchArchiveData() {
+  const querySnapshot = await getDocs(collection(db, "submissions"));
+  const data = [];
+
+  querySnapshot.forEach((doc) => {
+    data.push(doc.data());
+  });
+
+  return data;
+}
