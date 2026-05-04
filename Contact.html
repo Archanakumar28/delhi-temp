@@ -26,6 +26,10 @@ nav {
   color: #E0CFC2;
 }
 
+nav h1 {
+  font-family: 'Playfair Display', serif;
+}
+
 nav ul {
   display: flex;
   list-style: none;
@@ -35,6 +39,10 @@ nav ul {
 nav a {
   color: #E0CFC2;
   text-decoration: none;
+}
+
+nav a:hover {
+  color: #CAAE9F;
 }
 
 /* HERO */
@@ -48,6 +56,11 @@ nav a {
   justify-content: center;
   align-items: center;
   color: #E0CFC2;
+}
+
+.contact-hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
 }
 
 /* CONTAINER */
@@ -69,6 +82,11 @@ nav a {
   background: #CAAE9F;
   padding: 30px;
   border-radius: 20px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
 }
 
 /* FORM */
@@ -82,16 +100,19 @@ input, textarea {
   padding: 12px;
   border-radius: 10px;
   border: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 input[type="file"] {
   background: #E0CFC2;
 }
 
+/* BUTTON */
 button {
   padding: 12px;
   background: #62191C;
   color: #E0CFC2;
+  border: none;
   border-radius: 25px;
   cursor: pointer;
   transition: 0.3s;
@@ -107,7 +128,7 @@ footer {
   padding: 20px;
   background: #62191C;
   color: #E0CFC2;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 /* RESPONSIVE */
@@ -147,15 +168,19 @@ footer {
 <!-- CONTACT INFO -->
 <div class="card">
   <h3>Get in Touch</h3>
-  <p>Email: ephemeraldelhi@gmail.com</p>
-  <p>Location: Delhi, India</p>
+  <p>
+    Ephemeral Delhi is an evolving digital archive documenting temporary architecture.
+  </p>
+  <p><b>Email:</b> ephemeraldelhi@gmail.com</p>
+  <p><b>Location:</b> Delhi, India</p>
 </div>
 
 <!-- CONTACT FORM -->
 <div class="card">
   <h3>Write to Us</h3>
 
-  <form action="https://formspree.io/f/abcdxyz" method="POST">
+  <form action="https://formspree.io/f/xwvyllze" method="POST">
+
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <textarea name="message" placeholder="Your Message"></textarea>
@@ -169,19 +194,22 @@ footer {
 
 </div>
 
-<!-- ARCHIVE SUBMISSION -->
+<!-- ARCHIVE FORM -->
 <div class="card" style="margin-top:40px;">
   <h3>Contribute to Archive</h3>
 
-  <form action="https://formspree.io/f/abcdxyz" 
-        method="POST" 
+  <p>
+    Upload temporary structures you've encountered. Selected entries may be featured.
+  </p>
+
+  <form action="https://formspree.io/f/xwvyllze"
+        method="POST"
         enctype="multipart/form-data">
 
     <input type="text" name="name" placeholder="Your Name">
-    <input type="text" name="location" placeholder="Location (CR Park, etc.)">
+    <input type="text" name="location" placeholder="Location (e.g., CR Park)">
     <input type="text" name="type" placeholder="Type (Religious / Social / Political / Commercial)">
-    
-    <!-- IMAGE UPLOAD -->
+
     <input type="file" name="image" accept="image/*">
 
     <textarea name="description" placeholder="Description"></textarea>
@@ -189,6 +217,7 @@ footer {
     <input type="hidden" name="formType" value="archive">
 
     <button type="submit">Submit to Archive</button>
+
   </form>
 
 </div>
