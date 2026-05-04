@@ -107,6 +107,21 @@ input[type="file"] {
   background: #E0CFC2;
 }
 
+/* CONSENT */
+.consent {
+  font-size: 14px;
+  margin: 10px 0 15px;
+  line-height: 1.5;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.consent input {
+  margin-top: 4px;
+  accent-color: #62191C;
+}
+
 /* BUTTON */
 button {
   padding: 12px;
@@ -215,6 +230,12 @@ footer {
     <textarea name="description" placeholder="Description"></textarea>
 
     <input type="hidden" name="formType" value="archive">
+
+    <!-- CONSENT CHECKBOX -->
+    <label class="consent">
+      <input type="checkbox" name="consent" required>
+      I confirm that I own this image/content or have permission to share it, and I consent to its use, display, and archiving in the Ephemeral Delhi project.
+    </label>
 
     <button type="submit">Submit to Archive</button>
 
