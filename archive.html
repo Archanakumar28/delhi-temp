@@ -108,24 +108,35 @@ nav a {
   display: none;
   position: fixed;
   z-index: 1000;
-  padding-top: 80px;
+  padding: 80px 20px;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,0.9);
 }
 
 .modal-content {
   display: block;
   margin: auto;
   max-width: 80%;
+  border-radius: 10px;
 }
 
 #modal-caption {
   text-align: center;
   color: #fff;
-  margin-top: 10px;
+  margin-top: 20px;
+  font-size: 22px;
+  font-family: 'Playfair Display', serif;
+}
+
+#modal-essay {
+  color: #ddd;
+  max-width: 800px;
+  margin: 20px auto;
+  line-height: 1.7;
+  font-size: 15px;
 }
 
 .close {
@@ -170,102 +181,50 @@ footer {
     <li><a href="archive.html">Archive</a></li>
     <li><a href="map.html">Map</a></li>
     <li><a href="analysis.html">Analysis</a></li>
-    <li><a href="Contact.html">Contact Us</a></li> 
+    <li><a href="Contact.html">Contact Us</a></li>
   </ul>
 </nav>
 
 <section class="content fade-section">
-<h2>Archive</h2>
-<p>Each entry captures a structure that briefly transformed space.</p>
+  <h2>Archive</h2>
+  <p>Each entry captures a structure that briefly transformed space.</p>
 </section>
 
 <section class="gallery fade-section">
 
-<div class="card" onclick="openModal(this)">
+<!-- CARD 1 -->
+<div class="card" onclick="openModal(this)"
+     data-title="Wedding Tent"
+     data-essay="A wedding tent in Delhi is more than a temporary structure. It becomes a curated world of aspiration, where fabric, light, and decoration construct a symbolic environment of celebration. Though short-lived, it transforms ordinary ground into a performative space of identity, status, and memory. Once dismantled, it leaves no physical trace, yet it persists in photographs and recollection.">
+
   <img src="images/wedding.jpg" alt="Wedding Tent">
   <div class="overlay">
     <h3>Wedding Tent</h3>
-    <p>A fleeting space where celebration briefly takes shape, then fades into memory.</p>
+    <p>A fleeting space of celebration</p>
   </div>
 </div>
 
-<div class="card" onclick="openModal(this)">
+<!-- CARD 2 -->
+<div class="card" onclick="openModal(this)"
+     data-title="Protest Stage"
+     data-essay="A protest stage transforms public space into a platform of visibility and resistance. It is not merely functional but symbolic, asserting presence within the urban fabric. Its temporary nature reflects the urgency of political expression and collective voice.">
+
   <img src="images/protest.jpg" alt="Protest Stage">
   <div class="overlay">
     <h3>Protest Stage</h3>
-    <p>Transforms public space into a site of political expression.</p>
+    <p>Space of political expression</p>
   </div>
 </div>
 
-<div class="card" onclick="openModal(this)">
-  <img src="images/protest.jpg" alt="Pandal">
-  <div class="overlay">
-    <h3>Protest Stage</h3>
-    <p>Transforms public space into a site of political expression.</p>
-  </div>
-</div>
+<!-- CARD 3 -->
+<div class="card" onclick="openModal(this)"
+     data-title="Durga Puja Pandal"
+     data-essay="Durga Puja pandals merge devotion with spectacle, creating immersive architectural environments. Built with intricate design and vibrant materiality, they transform neighborhoods into sacred landscapes that exist only for a short festival cycle.">
 
-<div class="card" onclick="openModal(this)">
-  <img src="images/protest.jpg" alt="Market">
-  <div class="overlay">
-    <h3>Protest Stage</h3>
-    <p>Transforms public space into a site of political expression.</p>
-  </div>
-</div>
-
-  <div class="card" onclick="openModal(this)">
-  <img src="images/protest.jpg" alt="Festivals">
-  <div class="overlay">
-    <h3>Protest Stage</h3>
-    <p>Transforms public space into a site of political expression.</p>
-  </div>
-</div>
-
-<div class="card" onclick="openModal(this)">
-  <img src="images/protest.jpg" alt="Shelter home">
-  <div class="overlay">
-    <h3>Protest Stage</h3>
-    <p>Transforms public space into a site of political expression.</p>
-  </div>
-</div>
-
-<div class="card" onclick="openModal(this)">
-  <img src="images/protest.jpg" alt="Concerts">
-  <div class="overlay">
-    <h3>Protest Stage</h3>
-    <p>Transforms public space into a site of political expression.</p>
-  </div>
-</div>
-
-<div class="card" onclick="openModal(this)">
-  <img src="images/protest.jpg" alt="Book Fair">
-  <div class="overlay">
-    <h3>Protest Stage</h3>
-    <p>Transforms public space into a site of political expression.</p>
-  </div>
-</div>
-
-<div class="card" onclick="openModal(this)">
-  <img src="images/protest.jpg" alt="Stall">
-  <div class="overlay">
-    <h3>Protest Stage</h3>
-    <p>Transforms public space into a site of political expression.</p>
-  </div>
-</div>
-
-<div class="card" onclick="openModal(this)">
-  <img src="images/protest.jpg" alt="stage">
-  <div class="overlay">
-    <h3>Protest Stage</h3>
-    <p>Transforms public space into a site of political expression.</p>
-  </div>
-</div>
-
-<div class="card" onclick="openModal(this)">
-  <img src="images/pandal.jpg" alt="Durga Puja Pandal">
+  <img src="images/pandal.jpg" alt="Pandal">
   <div class="overlay">
     <h3>Durga Puja Pandal</h3>
-    <p>Devotion merged with spectacle.</p>
+    <p>Devotion merged with spectacle</p>
   </div>
 </div>
 
@@ -274,8 +233,11 @@ footer {
 <!-- MODAL -->
 <div id="modal" class="modal">
   <span class="close" onclick="closeModal()">&times;</span>
+
   <img class="modal-content" id="modal-img">
+
   <div id="modal-caption"></div>
+  <div id="modal-essay"></div>
 </div>
 
 <footer>
@@ -284,15 +246,21 @@ Ephemeral Delhi — Archive
 
 <script>
 
-/* MODAL */
+/* OPEN MODAL */
 function openModal(card) {
   document.getElementById("modal").style.display = "block";
-  document.getElementById("modal-img").src = card.querySelector("img").src;
-  document.getElementById("modal-caption").innerHTML =
-    card.querySelector("h3").innerText + " — " +
-    card.querySelector("p").innerText;
+
+  document.getElementById("modal-img").src =
+    card.querySelector("img").src;
+
+  document.getElementById("modal-caption").innerText =
+    card.dataset.title;
+
+  document.getElementById("modal-essay").innerText =
+    card.dataset.essay;
 }
 
+/* CLOSE MODAL */
 function closeModal() {
   document.getElementById("modal").style.display = "none";
 }
@@ -313,4 +281,4 @@ sections.forEach(section => observer.observe(section));
 </script>
 
 </body>
-</html>   This is the current code of archive file,i want everything css and layout and design same just add the functionality
+</html>
