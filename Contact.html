@@ -8,103 +8,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
+body { margin:0; font-family:'Poppins'; background:#E0CFC2; color:#62191C; }
+nav { display:flex; justify-content:space-between; padding:20px 50px; background:#62191C; color:#E0CFC2;}
+nav ul { display:flex; gap:20px; list-style:none;}
+nav a { color:#E0CFC2; text-decoration:none;}
 
-/* BASE */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #E0CFC2;
-  color: #62191C;
-}
-
-/* NAV */
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 50px;
-  background: #62191C;
-  color: #E0CFC2;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
-
-nav a {
-  color: #E0CFC2;
-  text-decoration: none;
-}
-
-/* HERO */
 .contact-hero {
-  height: 40vh;
-  background: linear-gradient(rgba(98,25,28,0.8), rgba(98,25,28,0.8)),
-              url('images/contact-bg.jpg');
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #E0CFC2;
+  height:40vh;
+  background:linear-gradient(rgba(98,25,28,0.8),rgba(98,25,28,0.8)),url('images/contact-bg.jpg');
+  display:flex; align-items:center; justify-content:center;
+  color:#E0CFC2;
 }
 
-/* CONTAINER */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 60px 20px;
-}
+.container { max-width:1100px; margin:auto; padding:60px 20px; }
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px;}
 
-/* GRID */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
+.card { background:#CAAE9F; padding:30px; border-radius:20px; }
 
-/* CARD */
-.card {
-  background: #CAAE9F;
-  padding: 30px;
-  border-radius: 20px;
-}
+form { display:flex; flex-direction:column; }
+input, textarea { margin-bottom:15px; padding:12px; border-radius:10px; border:none;}
+button { padding:12px; background:#62191C; color:#E0CFC2; border-radius:25px; cursor:pointer;}
 
-/* FORM */
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-input, textarea {
-  margin-bottom: 15px;
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-}
-
-button {
-  padding: 12px;
-  background: #62191C;
-  color: #E0CFC2;
-  border-radius: 25px;
-  cursor: pointer;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #62191C;
-  color: #E0CFC2;
-}
-
+footer { text-align:center; padding:20px; background:#62191C; color:#E0CFC2;}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
   <h1>Ephemeral Delhi</h1>
   <ul>
@@ -117,7 +47,6 @@ footer {
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="contact-hero">
   <h2>Contact & Contribute</h2>
 </section>
@@ -126,13 +55,11 @@ footer {
 
 <div class="contact-grid">
 
-<!-- CONTACT -->
 <div class="card">
   <h3>Get in Touch</h3>
   <p>Email: ephemeraldelhi@gmail.com</p>
 </div>
 
-<!-- CONTACT FORM -->
 <div class="card">
   <h3>Write to Us</h3>
 
@@ -147,7 +74,6 @@ footer {
 
 </div>
 
-<!-- ARCHIVE FORM -->
 <div class="card" style="margin-top:40px;">
   <h3>Contribute to Archive</h3>
 
@@ -155,7 +81,6 @@ footer {
     <input type="text" id="archiveName" placeholder="Your Name">
     <input type="text" id="archiveLocation" placeholder="Location">
     <input type="text" id="archiveType" placeholder="Type">
-    <input type="file" id="archiveImage" accept="image/*">
     <textarea id="archiveDesc" placeholder="Description"></textarea>
     <button type="submit">Submit</button>
   </form>
@@ -168,12 +93,11 @@ footer {
 Ephemeral Delhi — Documenting what disappears
 </footer>
 
-<!-- FIREBASE SCRIPT -->
+<!-- FIREBASE CONNECTION -->
 <script type="module">
-
 import { submitContactForm, submitArchiveForm } from "./firebase.js";
 
-/* CONTACT */
+// CONTACT
 document.getElementById("contactForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -187,7 +111,7 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   e.target.reset();
 });
 
-/* ARCHIVE */
+// ARCHIVE
 document.getElementById("archiveForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -195,14 +119,12 @@ document.getElementById("archiveForm").addEventListener("submit", async (e) => {
     archiveName.value,
     archiveLocation.value,
     archiveType.value,
-    archiveDesc.value,
-    archiveImage.files[0]
+    archiveDesc.value
   );
 
-  alert("Submitted to archive!");
+  alert("Submitted for review!");
   e.target.reset();
 });
-
 </script>
 
 </body>
