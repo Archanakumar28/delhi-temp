@@ -54,7 +54,7 @@ nav a {
   color: #62191C;
 }
 
-/* GRID */
+/* GRID (UNCHANGED) */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -62,7 +62,7 @@ nav a {
   padding: 40px 8%;
 }
 
-/* CARD */
+/* CARD (UNCHANGED) */
 .card {
   position: relative;
   overflow: hidden;
@@ -83,7 +83,7 @@ nav a {
   transform: scale(1.1);
 }
 
-/* OVERLAY */
+/* OVERLAY (UNCHANGED) */
 .overlay {
   position: absolute;
   inset: 0;
@@ -114,7 +114,7 @@ nav a {
   overflow-y: auto;
 }
 
-/* MODAL CONTENT BOX */
+/* MODAL CONTENT */
 .modal-inner {
   max-width: 800px;
   margin: auto;
@@ -129,7 +129,7 @@ nav a {
   text-align: center;
 }
 
-/* ESSAY */
+/* ESSAY TEXT */
 #modal-essay {
   font-size: 15px;
   line-height: 1.8;
@@ -177,17 +177,17 @@ footer {
   <p>Each entry captures a structure that briefly transformed space.</p>
 </section>
 
+<!-- GRID (UNCHANGED CARDS) -->
 <section class="gallery">
 
 <!-- CARD 1 -->
 <div class="card" onclick="openModal(this)"
 data-title="Wedding Tent"
-data-essay="A wedding tent in Delhi becomes a temporary world of celebration, aspiration, and memory. It transforms ordinary space into something ceremonial before disappearing without trace.">
-
+data-essay="A wedding tent becomes a temporary world of celebration, aspiration, and memory. It transforms ordinary space into something ceremonial before disappearing without trace.">
   <img src="images/wedding.jpg">
   <div class="overlay">
     <h3>Wedding Tent</h3>
-    <p>Fleeting celebration space</p>
+    <p>A fleeting space of celebration</p>
   </div>
 </div>
 
@@ -195,38 +195,100 @@ data-essay="A wedding tent in Delhi becomes a temporary world of celebration, as
 <div class="card" onclick="openModal(this)"
 data-title="Protest Stage"
 data-essay="A protest stage asserts visibility and collective voice, turning public space into a site of resistance before dissolving back into the city.">
-
   <img src="images/protest.jpg">
   <div class="overlay">
     <h3>Protest Stage</h3>
-    <p>Space of resistance</p>
+    <p>Space of political expression</p>
   </div>
 </div>
 
 <!-- CARD 3 -->
 <div class="card" onclick="openModal(this)"
 data-title="Durga Puja Pandal"
-data-essay="A pandal is a temporary sacred architecture where devotion and spectacle merge before vanishing after the festival cycle.">
-
+data-essay="A pandal merges devotion and spectacle, creating a temporary sacred architecture that exists only for a short festival cycle.">
   <img src="images/pandal.jpg">
   <div class="overlay">
-    <h3>Pandal</h3>
-    <p>Festival architecture</p>
+    <h3>Durga Puja Pandal</h3>
+    <p>Devotion merged with spectacle</p>
+  </div>
+</div>
+
+<!-- CARD 4 -->
+<div class="card" onclick="openModal(this)"
+data-title="Market"
+data-essay="A pop-up market briefly transforms streets into spaces of exchange, interaction, and everyday negotiation before vanishing again.">
+  <img src="images/Market place.jpeg">
+  <div class="overlay">
+    <h3>Market</h3>
+    <p>Fleeting urban exchange</p>
+  </div>
+</div>
+
+<!-- CARD 5 -->
+<div class="card" onclick="openModal(this)"
+data-title="Concert"
+data-essay="A concert creates a temporary collective world where sound dissolves boundaries between strangers before fading into silence.">
+  <img src="images/Concert.jpeg">
+  <div class="overlay">
+    <h3>Concert</h3>
+    <p>Shared sonic experience</p>
+  </div>
+</div>
+
+<!-- CARD 6 -->
+<div class="card" onclick="openModal(this)"
+data-title="Book Fair"
+data-essay="A book fair becomes a temporary universe of stories, where countless narratives coexist before dispersing once again.">
+  <img src="images/Book fair.jpeg">
+  <div class="overlay">
+    <h3>Book Fair</h3>
+    <p>Temporary world of stories</p>
+  </div>
+</div>
+
+<!-- CARD 7 -->
+<div class="card" onclick="openModal(this)"
+data-title="Cultural Stall"
+data-essay="A cultural stall briefly activates space through craft, display, and interaction before disappearing without trace.">
+  <img src="images/Cultural Stall.jpeg">
+  <div class="overlay">
+    <h3>Cultural Stall</h3>
+    <p>Ephemeral display space</p>
+  </div>
+</div>
+
+<!-- CARD 8 -->
+<div class="card" onclick="openModal(this)"
+data-title="Temporary Structure"
+data-essay="Temporary structures constantly rewrite the city, appearing briefly and reshaping how space is experienced.">
+  <img src="images/protest.jpg">
+  <div class="overlay">
+    <h3>Temporary Structure</h3>
+    <p>Urban transformation</p>
+  </div>
+</div>
+
+<!-- CARD 9 -->
+<div class="card" onclick="openModal(this)"
+data-title="Ephemeral Site"
+data-essay="An ephemeral site exists only in transition, defined not by permanence but by its brief occupation of space.">
+  <img src="images/protest.jpg">
+  <div class="overlay">
+    <h3>Ephemeral Site</h3>
+    <p>Momentary architecture</p>
   </div>
 </div>
 
 </section>
 
-<!-- MODAL -->
+<!-- MODAL (TEXT ONLY) -->
 <div id="modal" class="modal">
-
   <span class="close" onclick="closeModal()">&times;</span>
 
   <div class="modal-inner">
     <div id="modal-caption"></div>
     <div id="modal-essay"></div>
   </div>
-
 </div>
 
 <footer>
@@ -235,7 +297,7 @@ Ephemeral Delhi — Archive
 
 <script>
 
-/* OPEN MODAL (TEXT ONLY) */
+/* OPEN ONLY TEXT */
 function openModal(card) {
   document.getElementById("modal").style.display = "block";
 
