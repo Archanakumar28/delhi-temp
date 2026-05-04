@@ -170,7 +170,6 @@ footer {
     <li><a href="archive.html">Archive</a></li>
     <li><a href="map.html">Map</a></li>
     <li><a href="analysis.html">Analysis</a></li>
-    <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
@@ -179,23 +178,93 @@ footer {
 <p>Each entry captures a structure that briefly transformed space.</p>
 </section>
 
-<section class="gallery fade-section" id="gallery">
-
-<!-- STATIC CARDS (UNCHANGED) -->
+<section class="gallery fade-section">
 
 <div class="card" onclick="openModal(this)">
-  <img src="images/wedding.jpg">
+  <img src="images/wedding.jpg" alt="Wedding Tent">
   <div class="overlay">
     <h3>Wedding Tent</h3>
-    <p>Aspiration through fabric & scale</p>
+    <p>Displays aspiration through fabric, lighting, and scale.</p>
   </div>
 </div>
 
 <div class="card" onclick="openModal(this)">
-  <img src="images/protest.jpg">
+  <img src="images/protest.jpg" alt="Protest Stage">
   <div class="overlay">
     <h3>Protest Stage</h3>
-    <p>Political expression</p>
+    <p>Transforms public space into a site of political expression.</p>
+  </div>
+</div>
+
+<div class="card" onclick="openModal(this)">
+  <img src="images/protest.jpg" alt="Protest Stage">
+  <div class="overlay">
+    <h3>Protest Stage</h3>
+    <p>Transforms public space into a site of political expression.</p>
+  </div>
+</div>
+
+<div class="card" onclick="openModal(this)">
+  <img src="images/protest.jpg" alt="Protest Stage">
+  <div class="overlay">
+    <h3>Protest Stage</h3>
+    <p>Transforms public space into a site of political expression.</p>
+  </div>
+</div>
+
+  <div class="card" onclick="openModal(this)">
+  <img src="images/protest.jpg" alt="Protest Stage">
+  <div class="overlay">
+    <h3>Protest Stage</h3>
+    <p>Transforms public space into a site of political expression.</p>
+  </div>
+</div>
+
+<div class="card" onclick="openModal(this)">
+  <img src="images/protest.jpg" alt="Protest Stage">
+  <div class="overlay">
+    <h3>Protest Stage</h3>
+    <p>Transforms public space into a site of political expression.</p>
+  </div>
+</div>
+
+<div class="card" onclick="openModal(this)">
+  <img src="images/protest.jpg" alt="Protest Stage">
+  <div class="overlay">
+    <h3>Protest Stage</h3>
+    <p>Transforms public space into a site of political expression.</p>
+  </div>
+</div>
+
+<div class="card" onclick="openModal(this)">
+  <img src="images/protest.jpg" alt="Protest Stage">
+  <div class="overlay">
+    <h3>Protest Stage</h3>
+    <p>Transforms public space into a site of political expression.</p>
+  </div>
+</div>
+
+<div class="card" onclick="openModal(this)">
+  <img src="images/protest.jpg" alt="Protest Stage">
+  <div class="overlay">
+    <h3>Protest Stage</h3>
+    <p>Transforms public space into a site of political expression.</p>
+  </div>
+</div>
+
+<div class="card" onclick="openModal(this)">
+  <img src="images/protest.jpg" alt="Protest Stage">
+  <div class="overlay">
+    <h3>Protest Stage</h3>
+    <p>Transforms public space into a site of political expression.</p>
+  </div>
+</div>
+
+<div class="card" onclick="openModal(this)">
+  <img src="images/pandal.jpg" alt="Durga Puja Pandal">
+  <div class="overlay">
+    <h3>Durga Puja Pandal</h3>
+    <p>Devotion merged with spectacle.</p>
   </div>
 </div>
 
@@ -211,45 +280,6 @@ footer {
 <footer>
 Ephemeral Delhi — Archive
 </footer>
-
-<!-- FIREBASE + DYNAMIC LOADING -->
-<script type="module">
-
-import { db } from "./firebase.js";
-import {
-  collection,
-  getDocs
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-const gallery = document.getElementById("gallery");
-
-/* LOAD SUBMITTED ARCHIVE DATA */
-async function loadArchive() {
-  const querySnapshot = await getDocs(collection(db, "archive"));
-
-  querySnapshot.forEach((doc) => {
-    const data = doc.data();
-
-    const card = document.createElement("div");
-    card.className = "card";
-
-    card.innerHTML = `
-      <img src="${data.imageUrl}">
-      <div class="overlay">
-        <h3>${data.type}</h3>
-        <p>${data.location}</p>
-      </div>
-    `;
-
-    card.onclick = () => openModal(card);
-
-    gallery.appendChild(card);
-  });
-}
-
-loadArchive();
-
-</script>
 
 <script>
 
@@ -282,4 +312,4 @@ sections.forEach(section => observer.observe(section));
 </script>
 
 </body>
-</html>
+</html>   This is the current code of archive file,i want everything css and layout and design same just add the functionality
