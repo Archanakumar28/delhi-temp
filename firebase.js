@@ -1,11 +1,11 @@
-// FIREBASE IMPORTS
+// FIREBASE CONFIG
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
 
-/* 🔴 REPLACE THIS WITH YOUR FIREBASE CONFIG */
+// 🔴 REPLACE WITH YOUR FIREBASE CONFIG
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
+  apiKey: "YOUR_KEY",
   authDomain: "YOUR_PROJECT.firebaseapp.com",
   projectId: "YOUR_PROJECT",
   storageBucket: "YOUR_PROJECT.appspot.com",
@@ -13,41 +13,34 @@ const firebaseConfig = {
   appId: "XXXX"
 };
 
-// INITIALIZE
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
-/* =========================
-   CONTACT FORM FUNCTION
-========================= */
+// CONTACT FORM
 export async function submitContactForm(name, email, message) {
-  await addDoc(collection(db, "messages"), {
-    name: name,
-    email: email,
-    message: message,
-    createdAt: new Date()
+  await addDoc(collection(db, "contacts"), {
+    name,
+    email,
+    message,
+    timestamp: new Date()
   });
 }
 
-/* =========================
-   ARCHIVE SUBMISSION FUNCTION
-========================= */
-export async function submitArchiveForm(name, location, type, description, file) {
-  let imageURL = "";
+// ARCHIVE FORM
+export async function submitArchiveForm(name, location, type, desc, file) {
 
-  if (file) {
-    const storageRef = ref(storage, "uploads/" + Date.now() + "-" + file.name);
-    await uploadBytes(storageRef, file);
-    imageURL = await getDownloadURL(storageRef);
-  }
+  const storageRef = ref(storage, `uploads/${file.name}`);
+  await uploadBytes(storageRef, file);
 
-  await addDoc(collection(db, "archive"), {
-    name: name,
-    location: location,
-    type: type,
-    description: description,
-    image: imageURL,
-    createdAt: new Date()
+  const imageUrl = await getDownloadURL(storageRef);
+
+  await addDoc(collection(db, "submissions"), {
+    name,
+    location,
+    type,
+    description: desc,
+    imageUrl,
+    timestamp: new Date()
   });
 }
