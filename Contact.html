@@ -8,34 +8,103 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-/* (YOUR CSS — UNCHANGED) */
-body { margin: 0; font-family: 'Poppins', sans-serif; background: #E0CFC2; color: #62191C; }
-nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: #62191C; color: #E0CFC2; }
-nav h1 { font-family: 'Playfair Display', serif; }
-nav ul { display: flex; list-style: none; gap: 20px; }
-nav a { color: #E0CFC2; text-decoration: none; }
-nav a:hover { color: #CAAE9F; }
-.contact-hero { height: 40vh; background: linear-gradient(rgba(98,25,28,0.8), rgba(98,25,28,0.8)), url('images/contact-bg.jpg'); background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center; color: #E0CFC2; text-align: center; }
-.contact-hero h2 { font-family: 'Playfair Display', serif; font-size: 38px; }
-.container { max-width: 1100px; margin: auto; padding: 60px 20px; }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-.card { background: #CAAE9F; padding: 30px; border-radius: 20px; transition: 0.3s; }
-.card:hover { transform: translateY(-6px); }
-h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; }
-form { display: flex; flex-direction: column; }
-input, textarea { margin-bottom: 15px; padding: 12px; border: none; border-radius: 10px; font-family: 'Poppins', sans-serif; }
-textarea { resize: none; height: 120px; }
-button { padding: 12px; background: #62191C; color: #E0CFC2; border: none; border-radius: 25px; cursor: pointer; transition: 0.3s; }
-button:hover { background: #873632; }
-.full-section { margin-top: 40px; }
-input[type="file"] { background: #E0CFC2; }
-footer { text-align: center; padding: 20px; background: #62191C; color: #E0CFC2; margin-top: 60px; }
-@media(max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+
+/* BASE */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #E0CFC2;
+  color: #62191C;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: #62191C;
+  color: #E0CFC2;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  color: #E0CFC2;
+  text-decoration: none;
+}
+
+/* HERO */
+.contact-hero {
+  height: 40vh;
+  background: linear-gradient(rgba(98,25,28,0.8), rgba(98,25,28,0.8)),
+              url('images/contact-bg.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #E0CFC2;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+/* GRID */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* CARD */
+.card {
+  background: #CAAE9F;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+}
+
+button {
+  padding: 12px;
+  background: #62191C;
+  color: #E0CFC2;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #62191C;
+  color: #E0CFC2;
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
   <h1>Ephemeral Delhi</h1>
   <ul>
@@ -48,6 +117,7 @@ footer { text-align: center; padding: 20px; background: #62191C; color: #E0CFC2;
   </ul>
 </nav>
 
+<!-- HERO -->
 <section class="contact-hero">
   <h2>Contact & Contribute</h2>
 </section>
@@ -56,15 +126,13 @@ footer { text-align: center; padding: 20px; background: #62191C; color: #E0CFC2;
 
 <div class="contact-grid">
 
-<!-- CONTACT INFO -->
+<!-- CONTACT -->
 <div class="card">
   <h3>Get in Touch</h3>
-  <p>Ephemeral Delhi is an evolving digital archive...</p>
-  <p><b>Email:</b> ephemeraldelhi@gmail.com</p>
-  <p><b>Location:</b> Delhi, India</p>
+  <p>Email: ephemeraldelhi@gmail.com</p>
 </div>
 
-<!-- WRITE TO US -->
+<!-- CONTACT FORM -->
 <div class="card">
   <h3>Write to Us</h3>
 
@@ -79,9 +147,9 @@ footer { text-align: center; padding: 20px; background: #62191C; color: #E0CFC2;
 
 </div>
 
-<!-- IMAGE SUBMISSION -->
-<div class="card full-section">
-  <h3>Contribute to the Archive</h3>
+<!-- ARCHIVE FORM -->
+<div class="card" style="margin-top:40px;">
+  <h3>Contribute to Archive</h3>
 
   <form id="archiveForm">
     <input type="text" id="archiveName" placeholder="Your Name">
@@ -89,7 +157,7 @@ footer { text-align: center; padding: 20px; background: #62191C; color: #E0CFC2;
     <input type="text" id="archiveType" placeholder="Type">
     <input type="file" id="archiveImage" accept="image/*">
     <textarea id="archiveDesc" placeholder="Description"></textarea>
-    <button type="submit">Submit to Archive</button>
+    <button type="submit">Submit</button>
   </form>
 
 </div>
@@ -100,61 +168,36 @@ footer { text-align: center; padding: 20px; background: #62191C; color: #E0CFC2;
 Ephemeral Delhi — Documenting what disappears
 </footer>
 
-<!-- 🔥 FIREBASE -->
+<!-- FIREBASE SCRIPT -->
 <script type="module">
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+import { submitContactForm, submitArchiveForm } from "./firebase.js";
 
-/* 🔴 ADD YOUR CONFIG */
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const storage = getStorage(app);
-
-/* CONTACT FORM */
+/* CONTACT */
 document.getElementById("contactForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  await addDoc(collection(db, "messages"), {
-    name: document.getElementById("contactName").value,
-    email: document.getElementById("contactEmail").value,
-    message: document.getElementById("contactMessage").value,
-    createdAt: new Date()
-  });
+  await submitContactForm(
+    contactName.value,
+    contactEmail.value,
+    contactMessage.value
+  );
 
   alert("Message sent!");
   e.target.reset();
 });
 
-/* ARCHIVE FORM */
+/* ARCHIVE */
 document.getElementById("archiveForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const file = document.getElementById("archiveImage").files[0];
-  let imageURL = "";
-
-  if (file) {
-    const storageRef = ref(storage, "uploads/" + file.name);
-    await uploadBytes(storageRef, file);
-    imageURL = await getDownloadURL(storageRef);
-  }
-
-  await addDoc(collection(db, "archive"), {
-    name: document.getElementById("archiveName").value,
-    location: document.getElementById("archiveLocation").value,
-    type: document.getElementById("archiveType").value,
-    description: document.getElementById("archiveDesc").value,
-    image: imageURL,
-    createdAt: new Date()
-  });
+  await submitArchiveForm(
+    archiveName.value,
+    archiveLocation.value,
+    archiveType.value,
+    archiveDesc.value,
+    archiveImage.files[0]
+  );
 
   alert("Submitted to archive!");
   e.target.reset();
