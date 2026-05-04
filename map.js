@@ -42,7 +42,7 @@ addMarker(
 
 // Wedding (Social)
 addMarker(
-  28.6304, 77.2177,
+  28.4562, 77.18235,
   "Social",
   "Wedding Tent",
   "Displays aspiration through lighting, fabric, and scale.",
