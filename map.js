@@ -44,28 +44,59 @@ addMarker(
 addMarker(
   28.643318, 77.338189,
   "Social",
-  "Wedding Tent",
+  "Chattarpur-Weddings",
   "Displays aspiration through lighting, fabric, and scale.",
-  "images/wedding.jpg"
+  "images/wedding.jpeg"
 );
 
 // Protest (Political)
 addMarker(
-  28.6129, 77.2295,
+ 28.627057, 77.216624,
   "Political",
-  "Protest Stage",
+  "Jantar Mantar",
   "Transforms public space into a site of resistance and visibility.",
-  "images/protest.jpg"
+  "images/Protest.jpeg"
 );
 
 // Market (Commercial)
 addMarker(
-  28.6562, 77.2410,
+  28.6290542,77.2185485,
   "Commercial",
-  "Festival Market",
+  "Janpath Temporary Market",
   "Pop-up commercial activity shaping seasonal urban rhythms.",
   "images/market.jpg"
 );
+
+// Concert (Commercial)
+addMarker(
+ 28.4951279, 77.0887591,
+  "Commercial",
+  "DLF CYBER Hub",
+  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "images/Concert.jpeg"
+);
+
+// Book Fair (Commercial)
+addMarker(
+28.6196233, 77.2424336,
+  "Commercial",
+  "Bharat Mandapam",
+  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "images/Concert.jpeg"
+);
+
+// Bhandara(Religious)
+addMarker(
+28.5677, 77.2433,
+  "Religious",
+  "Lajpat Nagar",
+  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "images/Bhandara.jpeg"
+);
+
+
+
+
 
 
 // ------------------ FILTER FUNCTION ------------------
