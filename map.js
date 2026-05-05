@@ -36,7 +36,7 @@ addMarker(
   28.5400, 77.2470,
   "Religious",
   "CR Park Durga Puja",
-  "A major pandal space transforming the neighborhood into a ritual-cultural landscape.",
+  "Transforms neighborhood space into a temporary sacred landscape through ritual, spectacle, and collective memory.",
   "images/Durga Pandal.jpeg"
 );
 
@@ -45,7 +45,7 @@ addMarker(
   28.643318, 77.338189,
   "Social",
   "Chattarpur-Weddings",
-  "Displays aspiration through lighting, fabric, and scale.",
+  "Reconfigures space into a site of aspiration and celebration through scale, ornamentation, and sensory excess.",
   "images/wedding.jpeg"
 );
 
@@ -54,7 +54,7 @@ addMarker(
  28.627057, 77.216624,
   "Political",
   "Jantar Mantar",
-  "Transforms public space into a site of resistance and visibility.",
+  "Converts urban space into a visible मंच of dissent, negotiation, and collective voice.",
   "images/Protest.jpeg"
 );
 
@@ -63,8 +63,8 @@ addMarker(
   28.6290542,77.2185485,
   "Commercial",
   "Janpath Temporary Market",
-  "Pop-up commercial activity shaping seasonal urban rhythms.",
-  "images/market.jpg"
+  "Activates streets as fluid marketplaces shaped by mobility, informality, and seasonal rhythms.",
+  "images/Market.jpeg"
 );
 
 // Concert (Commercial)
@@ -72,7 +72,7 @@ addMarker(
  28.4951279, 77.0887591,
   "Commercial",
   "DLF CYBER Hub",
-  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "Transforms corporate space into a temporary cultural hub through performance and consumption.",
   "images/Concert.jpeg"
 );
 
@@ -81,7 +81,7 @@ addMarker(
 28.6196233, 77.2424336,
   "Commercial",
   "Bharat Mandapam",
-  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "Hosts large-scale temporary knowledge and trade environments that emerge through event-based congregation.",
   "images/Book fair.jpeg"
 );
 
@@ -99,35 +99,18 @@ addMarker(
 28.5833, 77.0667,
   "Commercial",
   "Dwarka Hub",
-  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "Creates itinerant retail landscapes defined by mobility, reuse, and informal economies.",
   "images/Market.jpeg"
 );
 
-// Bhandara(Religious)
-addMarker(
-28.5677, 77.2433,
-  "Religious",
-  "Lajpat Nagar",
-  "Pop-up commercial activity shaping seasonal urban rhythms.",
-  "images/Bhandara.jpeg"
-);
 
 // Open Screening(Commercial)
 addMarker(
 28.5528, 77.1947,
   "Commercial",
   "Hauz Khaaz",
-  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "Reimagines public space as a shared visual experience through temporary cinematic gatherings.",
   "images/Cinema.jpeg"
-);
-
-// Bhandara(Religious)
-addMarker(
-28.5677, 77.2433,
-  "Religious",
-  "Lajpat Nagar",
-  "Pop-up commercial activity shaping seasonal urban rhythms.",
-  "images/Bhandara.jpeg"
 );
 
 // Open Concerts(Commercial)
@@ -135,7 +118,7 @@ addMarker(
 28.5969, 77.2453,
   "Commercial",
   "Sunder Nursery",
-  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "Blends landscape and performance to produce ephemeral atmospheres of leisure and cultural engagement.",
   "images/Candle.jpeg"
 );
 
@@ -144,25 +127,17 @@ addMarker(
 28.5732, 77.2085,
   "Commercial",
   "Delhi Haat INA",
-  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "Constructs a curated yet temporary marketplace of craft, culture, and regional identity.",
   "images/Crafts.jpeg"
 );
 
-// Cultural Fair(Commercial)
-addMarker(
-28.5732, 77.2085,
-  "Commercial",
-  "Delhi Haat INA",
-  "Pop-up commercial activity shaping seasonal urban rhythms.",
-  "images/Crafts.jpeg"
-);
 
 // Auto Expo(Commercial)
 addMarker(
 28.6195, 77.2424,
   "Commercial",
   "Bhart Mandapam",
-  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "Transforms exhibition space into a spectacle of innovation, scale, and consumer imagination.",
   "images/Showcase festivals.jpeg"
 );
 
@@ -171,7 +146,7 @@ addMarker(
 28.5862, 77.2252,
   "Commercial",
   "Lodhi Art District",
-  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "Activates urban surfaces as evolving canvases through time-bound artistic interventions.",
   "images/Temp art.jpeg"
 );
 
