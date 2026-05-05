@@ -37,7 +37,7 @@ addMarker(
   "Religious",
   "CR Park Durga Puja",
   "A major pandal space transforming the neighborhood into a ritual-cultural landscape.",
-  "images/pandal.jpg"
+  "images/Durga Pandal.jpeg"
 );
 
 // Wedding (Social)
