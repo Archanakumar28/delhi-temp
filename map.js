@@ -82,7 +82,7 @@ addMarker(
   "Commercial",
   "Bharat Mandapam",
   "Pop-up commercial activity shaping seasonal urban rhythms.",
-  "images/Concert.jpeg"
+  "images/Book fair.jpeg"
 );
 
 // Bhandara(Religious)
@@ -94,7 +94,86 @@ addMarker(
   "images/Bhandara.jpeg"
 );
 
+// Banjara Market(Commercial)
+addMarker(
+28.5833, 77.0667,
+  "Commercial",
+  "Dwarka Hub",
+  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "images/Market.jpeg"
+);
 
+// Bhandara(Religious)
+addMarker(
+28.5677, 77.2433,
+  "Religious",
+  "Lajpat Nagar",
+  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "images/Bhandara.jpeg"
+);
+
+// Open Screening(Commercial)
+addMarker(
+28.5528, 77.1947,
+  "Commercial",
+  "Hauz Khaaz",
+  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "images/Cinema.jpeg"
+);
+
+// Bhandara(Religious)
+addMarker(
+28.5677, 77.2433,
+  "Religious",
+  "Lajpat Nagar",
+  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "images/Bhandara.jpeg"
+);
+
+// Open Concerts(Commercial)
+addMarker(
+28.5969, 77.2453,
+  "Commercial",
+  "Sunder Nursery",
+  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "images/Candle.jpeg"
+);
+
+// Cultural Fair(Commercial)
+addMarker(
+28.5732, 77.2085,
+  "Commercial",
+  "Delhi Haat INA",
+  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "images/Crafts.jpeg"
+);
+
+// Cultural Fair(Commercial)
+addMarker(
+28.5732, 77.2085,
+  "Commercial",
+  "Delhi Haat INA",
+  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "images/Crafts.jpeg"
+);
+
+// Auto Expo(Commercial)
+addMarker(
+28.6195, 77.2424,
+  "Commercial",
+  "Bhart Mandapam",
+  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "images/Showcase festivals.jpeg"
+);
+
+// Temporary Art Festivals(Commercial)
+addMarker(
+28.5862, 77.2252,
+  "Commercial",
+  "Lodhi Art District",
+  "Pop-up commercial activity shaping seasonal urban rhythms.",
+  "images/Temp art.jpeg"
+);
 
 
 
